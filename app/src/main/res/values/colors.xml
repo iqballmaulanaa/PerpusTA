@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#0099ff</color>
+    <color name="purple_500">#0099ff</color>
+    <color name="purple_700">#0099ff</color>
+    <color name="purple_dark">#005B98</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bg_pucat">#DADADA</color>
+    <color name="grey">#FFF5F5F5</color>
+    <color name="timeAgo">#CACACA</color>
+
+    <color name="jrspinner_color_line">#E0E0E0</color>
+    <color name="jrspinner_color_default">#99000000</color>
+    <color name="jrspinner_black_transparent">#80000000</color>
+</resources>

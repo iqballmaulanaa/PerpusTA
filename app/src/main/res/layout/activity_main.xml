@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:background="@drawable/header_backgorund"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <LinearLayout
+            android:layout_toLeftOf="@+id/imgBtnLogout"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/circleImageView"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtNis"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.AppCompat.SearchResult.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtNama"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:tint="@color/white"
+            android:onClick="logout"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:id="@+id/imgBtnLogout"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_logout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ConversationActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:background="@color/purple_500"
+            android:id="@+id/toolbar_chats"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <include layout="@layout/toolbar_conversation"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/appBar"
+        android:layout_above="@+id/frame"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="@color/grey"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageButton
+            android:onClick="openGallery"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/imgCam"
+            android:src="@drawable/ic_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <RelativeLayout
+            android:padding="10dp"
+            android:layout_gravity="clip_vertical"
+            android:id="@+id/relativeBot"
+            android:background="@drawable/ic_rectangle_25"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@null"
+                android:textColorHint="@color/purple_500"
+                android:textColor="@color/black"
+                android:id="@+id/textInputEditText"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/imgSend"
+                android:hint="Ketik disini...."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:onClick="sendChat"
+                android:layout_marginRight="15dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_send"
+                android:layout_centerVertical="true"
+                android:id="@+id/imgSend"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="@color/purple_500" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,353 @@
+{
+  "bookData": {
+    "-MpRC62QuvX_Ul0mBxIU": {
+      "category": "Cergam",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpRC62QuvX_Ul0mBxIU?alt=media&token=4d979db1-d232-417a-88f1-f693e0fe92cf",
+      "nama": "pendidikan agama Islam dan budi pekerti",
+      "penulis": "Widiatmoko",
+      "tahun": "2015"
+    },
+    "-MpRDA9QIZHCeK8FxwAr": {
+      "category": "Novel",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpRDA9QIZHCeK8FxwAr?alt=media&token=02ed3a73-b5b4-485d-a803-cc957ef5f2ff",
+      "key": "-MpRDA9QIZHCeK8FxwAr",
+      "nama": "Buku tema kelas 2 bermain di lingkunganku",
+      "penulis": "mmweb-01",
+      "tahun": "2017"
+    },
+    "-MpRDhlDKlSJorhxBzQj": {
+      "category": "Cergam",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpRDhlDKlSJorhxBzQj?alt=media&token=bae69fec-3cdc-4126-9042-d685b8a720e1",
+      "nama": "pendidikan agama Hindu dan budi pekerti siswa kelas 1",
+      "penulis": "bestari putra",
+      "tahun": "2014"
+    },
+    "-MpREf7g-BqjJ5UuMLIt": {
+      "category": "Novel",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpREf7g-BqjJ5UuMLIt?alt=media&token=627b05c0-b971-41d6-862e-0b10a1ebb4c2",
+      "nama": "buku tema 2 selalu berhemat energi kelas IV",
+      "penulis": "mmweb-01",
+      "tahun": "2017"
+    },
+    "-MpRFdNDNhJc5cZHc3oz": {
+      "category": "Novel",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpRFdNDNhJc5cZHc3oz?alt=media&token=2081d9d2-f1ff-4ac0-8913-bfa9a9978ccd",
+      "nama": "buku tema 5  kelas 1 pengalamanku",
+      "penulis": "mmweb-01",
+      "tahun": "2017"
+    },
+    "-MpRGvmjFCKBUX777rhT": {
+      "category": "Novel",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpRGvmjFCKBUX777rhT?alt=media&token=027ebf8e-43c2-4d65-910a-07418d4857ac",
+      "nama": "buku tema 6 kelas III indahnya persahabatan siswa",
+      "penulis": "bestari putra",
+      "tahun": "2015"
+    },
+    "-MpRI4EP6_LKZjfl2jWK": {
+      "category": "Cergam",
+      "gambar": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/bookImage%2F-MpRI4EP6_LKZjfl2jWK?alt=media&token=c80d5e3f-9f50-4ddc-b406-d6f65e348d52",
+      "nama": "pendidikan agama Khonghucu dan budi pekerti kelas III",
+      "penulis": "wdiatmoko",
+      "tahun": "2015"
+    }
+  },
+  "listBookPinjam": {
+    "-MpkaGm1RxYZhkCDEknu": [
+      {
+        "bukuKey": "-MpRI4EP6_LKZjfl2jWK",
+        "jumlah": 2
+      }
+    ],
+    "-Mq05TieXyOqkmM_p4TY": [
+      {
+        "bukuKey": "-MpRC62QuvX_Ul0mBxIU",
+        "jumlah": 1
+      }
+    ],
+    "-MqaPa9JKROWVjvpFuND": [
+      {
+        "bukuKey": "-MpRC62QuvX_Ul0mBxIU",
+        "jumlah": 1
+      }
+    ]
+  },
+  "listChat": {
+    "1234": {
+      "-N0XaIpbjRug5EnpP6oJ": {
+        "isAdmin": 2,
+        "message": "Bu",
+        "messageType": 1,
+        "time": 1650921651044
+      },
+      "-N0XbfzG11CTnkQf4Ak-": {
+        "isAdmin": 1,
+        "message": "ya",
+        "messageType": 1,
+        "time": 1650922012110
+      }
+    },
+    "hadasa": {
+      "-MpRp-MdCAlyDg4F1uGk": {
+        "isAdmin": 2,
+        "message": "ibu selamat malam saya ingin meminjam buku",
+        "messageType": 1
+      },
+      "-MqaO8JRCoYfI8VQ6DeX": {
+        "isAdmin": 1,
+        "message": "buku apa yang ingin di pinjam ?",
+        "messageType": 1,
+        "time": 1639174147921
+      }
+    }
+  },
+  "listKembali": {
+    "-Mo8H3C4-dkv1GpOc0nR": {
+      "tanggalKembali": 1636556400000
+    },
+    "-MpkaGm1RxYZhkCDEknu": {
+      "tanggalKembali": 1638370800000
+    },
+    "-Mq05TieXyOqkmM_p4TY": {
+      "tanggalKembali": 1650992400000
+    }
+  },
+  "listPinjam": {
+    "-MpkaGm1RxYZhkCDEknu": {
+      "nis": "hadasa",
+      "tanggal": 1638198000000,
+      "tglBatas": 1638370800000
+    },
+    "-Mq05TieXyOqkmM_p4TY": {
+      "nis": "hadasa",
+      "tanggal": 1638543600000,
+      "tglBatas": 1638630000000
+    },
+    "-MqaPa9JKROWVjvpFuND": {
+      "nis": "hadasa",
+      "tanggal": 1639234800000,
+      "tglBatas": 1639839600000
+    }
+  },
+  "user": {
+    "1234": {
+      "alamat": "Cilacap",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2F1234?alt=media&token=a708e5ae-d03e-4c70-bd89-cc65c7a7660e",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "Didip",
+      "password": "1234567890",
+      "tanggalLahir": 798829200000,
+      "tempatLahir": "Cilacap"
+    },
+    "32190027": {
+      "alamat": "Dayeuhluhur, cipancur rt 4 rw 10",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2F32190027?alt=media&token=472ffe45-e117-4dfe-8d11-429912ebeec3",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "Sri puspita dwijayanti",
+      "password": "Selamanya1",
+      "tanggalLahir": 975085200000,
+      "tempatLahir": "Cilacap"
+    },
+    "321900277": {
+      "alamat": "Cilacap",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2F321900277?alt=media&token=b58d3ab5-c9cc-4a4d-b214-858ad29d1e4a",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "Sri puspita dwijayanti",
+      "password": "Selamanya1",
+      "tanggalLahir": 975085200000,
+      "tempatLahir": "Cilacap"
+    },
+    "admin": {
+      "alamat": "vb",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fadmin?alt=media&token=cdc3b636-aa47-41ca-9fc7-57cf31a56abf",
+      "isAdmin": 1,
+      "jenisKelamin": 1,
+      "nama": "admin",
+      "password": "admin",
+      "tanggalLahir": 0,
+      "tempatLahir": "eeee"
+    },
+    "emilioambut": {
+      "alamat": "ajen",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Femilioambut?alt=media&token=a2686a86-1bb2-46d9-95a9-687ba4ddbe0d",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "emilio ambut",
+      "password": "emilioambut",
+      "tanggalLahir": 1279465200000,
+      "tempatLahir": "jayapura"
+    },
+    "frediderek": {
+      "alamat": "apo bengkel",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Ffrediderek?alt=media&token=10b5b42e-8af3-469b-b293-085a09aca668",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "fredi derek",
+      "password": "frediderek",
+      "tanggalLahir": 1270998000000,
+      "tempatLahir": "jayapura"
+    },
+    "gilbertbonay": {
+      "alamat": "dok 5",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fgilbertbonay?alt=media&token=5a262997-5a26-41e1-b194-3fe126ec4456",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "gilbert bonay",
+      "password": "gilbertbonay",
+      "tanggalLahir": 1279119600000,
+      "tempatLahir": "jayapura"
+    },
+    "giovanidjoke": {
+      "alamat": "ajen",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fgiovanidjoke?alt=media&token=0076932d-dfee-4853-9a44-d0436fdd122c",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "giovani djoke",
+      "password": "giovanidjoke",
+      "tanggalLahir": 1290092400000,
+      "tempatLahir": "jayapura"
+    },
+    "hadasa": {
+      "alamat": "polimak",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fhadasa?alt=media&token=843b1ce8-ec43-4107-af40-122c067aebdb",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "hadasa",
+      "password": "hadasa",
+      "tanggalLahir": 1313938800000,
+      "tempatLahir": "jayapura"
+    },
+    "ianobama": {
+      "alamat": "dok 4",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fianobama?alt=media&token=c1eb487b-823e-4f26-9fc7-8733d84791a0",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "ian obama",
+      "password": "ianobama",
+      "tanggalLahir": 1291215600000,
+      "tempatLahir": "jayapura"
+    },
+    "jastimbisim": {
+      "alamat": "apo pantai",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fjastimbisim?alt=media&token=93f4ccc5-a525-4458-b463-54ee907ad61b",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "jastim bisim",
+      "password": "jastimbisim",
+      "tanggalLahir": 1260975600000,
+      "tempatLahir": "jayapura"
+    },
+    "juliandroamamehi": {
+      "alamat": "apo bengkel",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fjuliandroamamehi?alt=media&token=359e3bf4-44b1-4a7a-a782-98c1ea7bea56",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "juliandro amamehi",
+      "password": "juliandroamamehi",
+      "tanggalLahir": 1263135600000,
+      "tempatLahir": "serui"
+    },
+    "kartinisaniel": {
+      "alamat": "polimak",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fkartinisaniel?alt=media&token=b91d4942-e773-41c1-b8b7-0aab09e62210",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "kartini saniel",
+      "password": "kartinisaniel",
+      "tanggalLahir": 1239548400000,
+      "tempatLahir": "abepura"
+    },
+    "marenodfretes": {
+      "alamat": "aspol",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fmarenodfretes?alt=media&token=acca7dae-5e8c-43b6-9ecd-9e44c64de8cd",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "mareno dfretes",
+      "password": "marenodfretes",
+      "tanggalLahir": 1276614000000,
+      "tempatLahir": "serui"
+    },
+    "marvelrumaseb": {
+      "alamat": "paldam",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fmarvelrumaseb?alt=media&token=7abc4b12-b936-414a-a186-cf44d0086833",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "marvel rumaseb",
+      "password": "marvelrumaseb",
+      "tanggalLahir": 1281970800000,
+      "tempatLahir": "jayapura"
+    },
+    "nonawonda": {
+      "alamat": "apo camat",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fnonawonda?alt=media&token=f23e5210-498e-4da7-b105-7ab3801b20b4",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "nona wonda",
+      "password": "nonawonda",
+      "tanggalLahir": 1248102000000,
+      "tempatLahir": "wamena"
+    },
+    "pelangisamay": {
+      "alamat": "polimak laba laba",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fpelangisamay?alt=media&token=e99df1e4-5076-4097-a7e3-b594a8c05102",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "pelangi samay",
+      "password": "pelangisamay",
+      "tanggalLahir": 1321628400000,
+      "tempatLahir": "biak"
+    },
+    "queensikambuaya": {
+      "alamat": "paldam",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fqueensikambuaya?alt=media&token=598b1f58-a6f2-484a-8caa-840cce0c8193",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "queensi kambuaya",
+      "password": "queensikambuaya",
+      "tanggalLahir": 1255791600000,
+      "tempatLahir": "jayapura"
+    },
+    "rudolfawom": {
+      "alamat": "ajen",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Frudolfawom?alt=media&token=e10ae883-7b43-4f14-afa4-d5d5f1f10755",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "rudolf awom",
+      "password": "rudolfawom",
+      "tanggalLahir": 1289660400000,
+      "tempatLahir": "jayapura"
+    },
+    "syalomitha": {
+      "alamat": "aspol",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fsyalomitha?alt=media&token=9fa6a052-75b4-4336-b58f-fec2ff389bec",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "syalomitha",
+      "password": "syalomitha",
+      "tanggalLahir": 1290092400000,
+      "tempatLahir": "jayapura"
+    },
+    "tellywonda": {
+      "alamat": "apo bengkel",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Ftellywonda?alt=media&token=a5941ec8-f97c-4fe6-ad16-4377173a1c8e",
+      "isAdmin": 2,
+      "jenisKelamin": 2,
+      "nama": "telly wonda",
+      "password": "tellywonda",
+      "tanggalLahir": 1290092400000,
+      "tempatLahir": "wamena"
+    },
+    "yosuakaiba": {
+      "alamat": "aspol",
+      "image": "https://firebasestorage.googleapis.com/v0/b/perpusapp-50717.appspot.com/o/userImage%2Fyosuakaiba?alt=media&token=20aa9d6e-ad23-40bd-9eb4-53e347e7bba2",
+      "isAdmin": 2,
+      "jenisKelamin": 1,
+      "nama": "yosua kaiba",
+      "password": "yosuakaiba",
+      "tanggalLahir": 1290092400000,
+      "tempatLahir": "jayapura"
+    }
+  }
+}

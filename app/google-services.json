@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "983894280672",
+    "firebase_url": "https://furpare-d3356-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "furpare-d3356",
+    "storage_bucket": "furpare-d3356.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983894280672:android:e1dd6539dc97c2bae54385",
+        "android_client_info": {
+          "package_name": "com.perpussapp.perpusapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0w9lFjGlFOQ_VAwwQCZqNNmtpQjQS9d0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

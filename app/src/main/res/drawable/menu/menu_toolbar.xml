@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.cheezycode.techiedesi.MainActivity">
+
+    <item
+        android:iconTint="@android:color/white"
+        app:showAsAction="always"
+        android:id="@+id/acion_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"  />
+
+    <item
+        android:id="@+id/filter"
+        android:icon="@drawable/ic_filter"
+        android:iconTint="@color/white"
+        android:title="Filter"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/print"
+        android:icon="@drawable/ic_print"
+        android:iconTint="@color/white"
+        android:title="print"
+        app:showAsAction="always" />
+
+
+    <item
+        android:visible="false"
+        android:id="@+id/add"
+        android:icon="@drawable/ic_baseline_playlist_add_24"
+        android:iconTint="@color/white"
+        android:title="Tambah"
+        app:showAsAction="always" />
+
+<!--    <item android:id="@+id/rate"-->
+<!--        android:title="Rate This App"-->
+<!--        app:showAsAction="never" />-->
+
+</menu>

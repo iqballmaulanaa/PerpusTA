@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="180dp"
+            android:layout_height="190dp">
+
+            <com.joooonho.SelectableRoundedImageView
+                app:sriv_left_top_corner_radius="10dp"
+                app:sriv_right_top_corner_radius="10dp"
+                app:sriv_left_bottom_corner_radius="10dp"
+                app:sriv_right_bottom_corner_radius="10dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/circleImg"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="160dp"
+                android:layout_height="160dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_alignParentRight="true"
+                app:civ_circle_background_color="@android:color/white"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/imgBtn"
+                android:scaleType="centerCrop"
+                android:tint="@color/purple_500"
+                android:src="@android:drawable/ic_menu_camera"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNis"
+                android:hint="NIS/Username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:hint="Nama"
+                android:id="@+id/edtNama"
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:background="@drawable/bg_input_text_1"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="Jenis Kelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:id="@+id/radio"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:buttonTint="@color/purple_500"
+                    android:textColor="@android:color/darker_gray"
+                    android:id="@+id/rbL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laki-Laki"  />
+
+                <RadioButton
+                    android:buttonTint="@color/purple_500"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:id="@+id/rbP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perempuan"  />
+            </RadioGroup>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTempatLahir"
+                android:hint="Tempat Lahir"
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:focusable="false"
+                android:id="@+id/edtTanggalLahir"
+                android:hint="Tanggal Lahir"
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtAlamat"
+                android:hint="Alamat"
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:background="@drawable/bg_input_text_1"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18dp"
+                android:textColor="@android:color/darker_gray"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:text="Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:id="@+id/radioStatus"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:buttonTint="@color/purple_500"
+                    android:textColor="@android:color/darker_gray"
+                    android:id="@+id/rbAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admin"  />
+
+                <RadioButton
+                    android:buttonTint="@color/purple_500"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:id="@+id/rbSiswa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Siswa"  />
+            </RadioGroup>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPassword"
+                android:hint="Password"
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

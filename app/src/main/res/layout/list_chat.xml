@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.balysv.materialripple.MaterialRippleLayout
+    android:padding="5dp"
+    android:layout_marginTop="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
+            android:scaleType="centerCrop"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+
+        <LinearLayout
+            android:layout_toLeftOf="@+id/l"
+            android:layout_toRightOf="@+id/circleImageView"
+            android:layout_marginLeft="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:textColor="@color/purple_500"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    style="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtLastChat"
+                android:textColor="@android:color/darker_gray"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/img"
+                android:tint="@android:color/darker_gray"
+                android:src="@drawable/ic_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:id="@+id/l"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_marginRight="20dp"
+                android:layout_gravity="right"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:id="@+id/imgMore"
+                android:src="@drawable/ic_baseline_more_horiz_24"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+            <TextView
+                android:drawableTint="@android:color/darker_gray"
+                android:gravity="center_vertical"
+                android:drawableLeft="@android:drawable/ic_menu_recent_history"
+                android:textColor="@android:color/darker_gray"
+                android:text="@string/app_name"
+                android:id="@+id/txtDate"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </RelativeLayout>
+</com.balysv.materialripple.MaterialRippleLayout>
