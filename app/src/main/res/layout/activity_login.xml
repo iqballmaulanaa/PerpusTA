@@ -95,7 +95,7 @@
             android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/txtDaf"
             android:textColor="@android:color/darker_gray"
-            android:text="Belum Punya Akun?,"
+            android:text="Belum Punya Akun?"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
