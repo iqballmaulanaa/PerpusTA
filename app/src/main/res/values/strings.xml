@@ -1,44 +1,45 @@
 <resources>
     <string name="app_name">Perpus App</string>
     <string name="ket">Banyak Membaca Buku Semakin Berilmu</string>
+
     <string-array name="kategory">
         <item>Semua</item>
-        <item>Fisika kelas 10-12</item>
+        <item>Fisika</item>
         <item>Biologi</item>
         <item>Sejarah</item>
         <item>Matematika Peminatan</item>
         <item>Matematika</item>
         <item>Geografi</item>
-        <!--        <item>Antologi</item>-->
-        <!--        <item>Dongeng</item>-->
-        <!--        <item>Novelet</item>-->
-        <!--        <item>Karya Ilmiah</item>-->
-        <!--        <item>Tafsir</item>-->
-        <!--        <item>Kamus</item>-->
-        <!--        <item>Panduan (how to)</item>-->
-        <!--        <item>Atlas</item>-->
-        <!--        <item>Buku Ilmiah</item>-->
-        <!--        <item>Majalah</item>-->
-        <!--        <item>Buku Digital</item>-->
+        <item>Kimia</item>
+        <item>Bahasa Indonesia</item>
+        <item>Bahasa Inggris</item>
+        <item>Ekonomi</item>
+        <item>Sosiologi</item>
+        <item>PKn</item>
+        <item>Teknologi</item>
+        <item>Kesenian</item>
+        <item>Agama</item>
+        <item>Olahraga</item>
+        <item>Komik</item>
     </string-array>
+
     <string-array name="gambar">
-        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsU3x38HKF9Uf9Crb7LWcIbDc63iLo2akQA&amp;usqp=CAU</item>
-        <item>https://images.icon-icons.com/609/PNG/512/molecule_icon-icons.com_56341.png</item>
-        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYv4SVJbuiEcOjZD6WijLh_As6NuDYNe_Mw&amp;usqp=CAU</item>
-        <item>https://c1.klipartz.com/pngpicture/359/623/sticker-png-history-icon-museum-icon-yellow-line.png</item>
-        <item>https://img.lovepik.com/free-png/20211211/lovepik-mathematical-calculation-icon-free-vector-png-image_401496420_wh1200.png</item>
-        <item>https://pbs.twimg.com/profile_images/1091537124573114369/jzb1Wn3J_400x400.jpg</item>
-        <item>https://png.pngtree.com/png-clipart/20201225/ourlarge/pngtree-button-free-geographic-icon-shape-png-image_2609831.jpg</item>
-        <!--        <item>https://lh3.googleusercontent.com/O1mkwhF7XPflHSaDIXUde3qCq47EwKrIM6Cp5HzQa9iACQj0b0a_khCWdoTz7eDMQ3A</item>-->
-        <!--        <item>https://w7.pngwing.com/pngs/671/854/png-transparent-money-organization-consultant-curriculum-vitae-biodata-others-resume-public-relations-logo-thumbnail.png</item>-->
-        <!--        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxR5tUTSNF0DPxqid1w-5lz0mVUYdCjTwXA&amp;usqp=CAU</item>-->
-        <!--        <item>https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX20221718.jpg</item>-->
-        <!--        <item>https://www.pngkey.com/png/full/205-2057621_contract.png</item>-->
-        <!--        <item>https://cdn.apk-cloud.com/detail/image/air.co.id.kamusilmiah-w130.png</item>-->
-        <!--        <item>https://www.colorpng.com/wp-content/uploads/2021/03/Icon-png-transparent-TUTORIAL.png</item>-->
-        <!--        <item>https://image.flaticon.com/icons/png/512/992/992255.png</item>-->
-        <!--        <item>https://img1.pngdownload.id/20180626/org/kisspng-literature-review-research-proposal-scientific-jou-bookkeeping-book-5b32bd15a0e2a8.580531861530051861659.jpg</item>-->
-        <!--        <item>https://banner2.cleanpng.com/20180418/pfe/kisspng-magazine-computer-icons-clip-art-pamphlet-5ad763a942cfb1.1355483915240651932737.jpg</item>-->
-        <!--        <item>https://icon-library.com/images/digital-book-icon/digital-book-icon-4.jpg</item>-->
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsU3x38HKF9Uf9Crb7LWcIbDc63iLo2akQA&amp;usqp=CAU</item> <!-- Fisika -->
+        <item>https://images.icon-icons.com/609/PNG/512/molecule_icon-icons.com_56341.png</item> <!-- Biologi -->
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYv4SVJbuiEcOjZD6WijLh_As6NuDYNe_Mw&amp;usqp=CAU</item> <!-- Sejarah -->
+        <item>https://c1.klipartz.com/pngpicture/359/623/sticker-png-history-icon-museum-icon-yellow-line.png</item> <!-- Matematika Peminatan -->
+        <item>https://img.lovepik.com/free-png/20211211/lovepik-mathematical-calculation-icon-free-vector-png-image_401496420_wh1200.png</item> <!-- Matematika -->
+        <item>https://pbs.twimg.com/profile_images/1091537124573114369/jzb1Wn3J_400x400.jpg</item> <!-- Geografi -->
+        <item>https://png.pngtree.com/png-clipart/20201225/ourlarge/pngtree-button-free-geographic-icon-shape-png-image_2609831.jpg</item> <!-- Kimia -->
+        <item>https://cdn-icons-png.flaticon.com/512/2907/2907967.png</item> <!-- Bahasa Indonesia -->
+        <item>https://cdn-icons-png.flaticon.com/512/4206/4206277.png</item> <!-- Bahasa Inggris -->
+        <item>https://cdn-icons-png.flaticon.com/512/3103/3103452.png</item> <!-- Ekonomi -->
+        <item>https://cdn-icons-png.flaticon.com/512/1675/1675931.png</item> <!-- Sosiologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/3135/3135706.png</item> <!-- PKn -->
+        <item>https://cdn-icons-png.flaticon.com/512/4248/4248443.png</item> <!-- Teknologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/1829/1829596.png</item> <!-- Kesenian -->
+        <item>https://cdn-icons-png.flaticon.com/512/1998/1998610.png</item> <!-- Agama -->
+        <item>https://cdn-icons-png.flaticon.com/512/3004/3004667.png</item> <!-- Olahraga -->
+        <item>https://cdn-icons-png.flaticon.com/512/883/883746.png</item> <!-- Komik -->
     </string-array>
 </resources>

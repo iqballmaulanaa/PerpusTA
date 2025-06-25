@@ -108,21 +108,23 @@ public class MainActivity extends BaseActivity {
     private void setUpMenuSiswa(View viewAdmin) {
         RecyclerView recyclerView = viewAdmin.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
-        ArrayList <String> kategory =  new ArrayList<>();
-        ArrayList <String> gambar =  new ArrayList<>();
 
-        for (int i=0; i<getResources().getStringArray(R.array.kategory).length; i++){
-            try {
-                kategory.add(getResources().getStringArray(R.array.kategory)[i]);
-                gambar.add(getResources().getStringArray(R.array.gambar)[i]);
-            }catch (NullPointerException n){
-             n.getMessage();
-            }
+        ArrayList<String> kategory = new ArrayList<>();
+        ArrayList<String> gambar = new ArrayList<>();
 
+        String[] kategoriArray = getResources().getStringArray(R.array.kategory);
+        String[] gambarArray = getResources().getStringArray(R.array.gambar);
+
+        int minLength = Math.min(kategoriArray.length, gambarArray.length);
+
+        for (int i = 0; i < minLength; i++) {
+            kategory.add(kategoriArray[i]);
+            gambar.add(gambarArray[i]);
         }
-        recyclerView.setAdapter(new KategoriAdapter(this, kategory,gambar));
 
+        recyclerView.setAdapter(new KategoriAdapter(this, kategory, gambar));
     }
+
 
 
     public void toListChat(View view) {
