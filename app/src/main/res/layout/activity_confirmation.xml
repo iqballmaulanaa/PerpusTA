@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.ConfirmationActivity">
+
+    <!-- App Bar -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
@@ -16,165 +18,147 @@
             app:titleTextColor="@color/white"
             app:title="Detail Peminjaman"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Konten Utama -->
     <LinearLayout
         android:layout_below="@+id/appBar"
-        android:layout_above="@+id/c"
+        android:layout_above="@+id/btnKembalikanSiswa"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TableLayout
             android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+            <!-- Tanggal Pinjam -->
+            <TableRow>
                 <TextView
-                    android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
                     android:text="Tanggal Pinjam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:text=" : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:id="@+id/txtTanggal"
                     android:text="@string/app_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/purple_500"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
             </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+            <!-- Batas Pinjam -->
+            <TableRow>
                 <TextView
-                    android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
                     android:text="Batas Tanggal Pinjam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:text=" : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:id="@+id/txtBatas"
                     android:text="@string/app_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/purple_500"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
             </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+            <!-- NIS -->
+            <TableRow>
                 <TextView
-                    android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
                     android:text="NIS Siswa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:text=" : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:id="@+id/txtNis"
                     android:text="@string/app_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/purple_500"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
             </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+
+            <!-- Nama -->
+            <TableRow>
                 <TextView
-                    android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
                     android:text="Nama Siswa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:text=" : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:id="@+id/txtNama"
                     android:text="@string/app_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/purple_500"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
             </TableRow>
+
+            <!-- Tanggal Kembali -->
             <TableRow
-                android:id="@+id/tbRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/tbRow">
                 <TextView
-                    android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
                     android:text="Tanggal di Kembalikan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:text=" : "
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
                     android:textColor="@color/purple_500"
-                    style="@style/TextAppearance.AppCompat.Body1"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
                     android:id="@+id/txtKembali"
                     android:text="@string/app_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textColor="@color/purple_500"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
             </TableRow>
         </TableLayout>
-        <LinearLayout
-            android:orientation="vertical"
+
+        <TextView
+            android:text="Daftar Buku Pinjam"
+            android:textColor="@color/purple_500"
+            style="@style/TextAppearance.AppCompat.SearchResult.Title"
             android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content" />
 
-            <TextView
-                android:textColor="@color/purple_500"
-                style="@style/TextAppearance.AppCompat.SearchResult.Title"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Daftar Buku Pinjam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        <View
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
 
-            <View
-                android:layout_marginTop="5dp"
-                android:background="@android:color/darker_gray"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:background="@color/bg_pucat"
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:background="@color/bg_pucat"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
+    <!-- Tombol Kembalikan Buku (khusus siswa) -->
+    <Button
+        android:id="@+id/btnKembalikanSiswa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KEMBALIKAN BUKU"
+        android:textAllCaps="true"
+        android:backgroundTint="@color/main_green_color"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:visibility="gone" />
 
+    <!-- Tombol Simpan (khusus admin) -->
     <androidx.cardview.widget.CardView
         android:id="@+id/c"
         app:cardCornerRadius="5dp"
@@ -183,10 +167,13 @@
         app:cardBackgroundColor="@color/purple_500"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
         <com.balysv.materialripple.MaterialRippleLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/txtSim"
                 android:textColor="@color/white"
@@ -194,7 +181,8 @@
                 android:padding="10dp"
                 android:text="Simpan"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </com.balysv.materialripple.MaterialRippleLayout>
     </androidx.cardview.widget.CardView>
+
 </RelativeLayout>
