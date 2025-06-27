@@ -15,4 +15,5 @@
     <color name="jrspinner_color_line">#E0E0E0</color>
     <color name="jrspinner_color_default">#99000000</color>
     <color name="jrspinner_black_transparent">#80000000</color>
+    <color name="red">#F44336</color>
 </resources>
