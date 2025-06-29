@@ -124,7 +124,7 @@ public class UserActivity extends BaseActivity {
         edtNama = view1.findViewById(R.id.edtNama);
         edtNama.setText(userModel.getNama());
         edtNis = view1.findViewById(R.id.edtNis);
-        edtNis.setEnabled(false);
+        edtNis.setEnabled(true);
         edtNis.setText(userModel.getNis());
         radio = view1.findViewById(R.id.radio);
         radioStatus = view1.findViewById(R.id.radioStatus);
@@ -220,33 +220,39 @@ public class UserActivity extends BaseActivity {
     }
 
     private void simpanEdit(AlertDialog mAlertDialog, UserModel u) {
-        if (imgPath==null){
+        String newNis = edtNis.getText().toString().trim();
+        String oldNis = u.getNis();
+
+        if (imgPath == null) {
             UserModel userModel = new UserModel();
             userModel.setJenisKelamin(jenisKelamin);
             userModel.setIsAdmin(isAdmin);
             userModel.setNama(edtNama.getText().toString().trim());
             userModel.setTempatLahir(edtTempatLahir.getText().toString().trim());
-            userModel.setTanggalLahir( tanggalLahir );
+            userModel.setTanggalLahir(tanggalLahir);
             userModel.setImage(u.getImage());
             userModel.setAlamat(edtAlamat.getText().toString().trim());
             userModel.setPassword(edtPassword.getText().toString().trim());
-            mDatabase.child("user").child(u.getNis())
-                    .setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    mAlertDialog.dismiss();
-                    Toast.makeText(UserActivity.this, "Berhasil Menyimpan", Toast.LENGTH_SHORT).show();
 
-                }
-            });
-        }else {
+            mDatabase.child("user").child(newNis)
+                    .setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            if (!newNis.equals(oldNis)) {
+                                mDatabase.child("user").child(oldNis).removeValue();
+                            }
+                            mAlertDialog.dismiss();
+                            Toast.makeText(UserActivity.this, "Berhasil Menyimpan", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
             SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
             pDialog.getProgressHelper().setBarColor(getResources().getColor(R.color.purple_200));
             pDialog.setTitleText("Loading");
             pDialog.setCancelable(false);
             pDialog.show();
 
-            final StorageReference ref = storageRef.child("userImage/"+edtNis.getText().toString().trim());
+            final StorageReference ref = storageRef.child("userImage/" + newNis);
             UploadTask uploadTask = ref.putFile(Uri.fromFile(new File(getRealPathFromURIPath(Uri.parse(imgPath)))));
 
             uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -255,7 +261,6 @@ public class UserActivity extends BaseActivity {
                     if (!task.isSuccessful()) {
                         throw task.getException();
                     }
-
                     return ref.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
@@ -269,28 +274,32 @@ public class UserActivity extends BaseActivity {
                         userModel.setIsAdmin(isAdmin);
                         userModel.setNama(edtNama.getText().toString().trim());
                         userModel.setTempatLahir(edtTempatLahir.getText().toString().trim());
-                        userModel.setTanggalLahir( tanggalLahir );
+                        userModel.setTanggalLahir(tanggalLahir);
                         userModel.setImage(String.valueOf(downloadUri));
                         userModel.setAlamat(edtAlamat.getText().toString().trim());
                         userModel.setPassword(edtPassword.getText().toString().trim());
-                        mDatabase.child("user").child(edtNis.getText().toString().trim())
-                                .setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                mAlertDialog.dismiss();
-                                imgPath=null;
-                                Toast.makeText(UserActivity.this, "Berhasil Menyimpan", Toast.LENGTH_SHORT).show();
 
-                            }
-                        });
+                        mDatabase.child("user").child(newNis)
+                                .setValue(userModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        if (!newNis.equals(oldNis)) {
+                                            mDatabase.child("user").child(oldNis).removeValue();
+                                        }
+                                        mAlertDialog.dismiss();
+                                        imgPath = null;
+                                        Toast.makeText(UserActivity.this, "Berhasil Menyimpan", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                     } else {
-                        Log.d(TAG, "onComplete: "+task.getResult().toString());
+                        Log.d(TAG, "onComplete: " + task.getResult());
                     }
                     pDialog.dismissWithAnimation();
                 }
             });
         }
     }
+
 
     private void addLayout() {
         View view1 = LayoutInflater.from(this).inflate(R.layout.form_user,null  );
