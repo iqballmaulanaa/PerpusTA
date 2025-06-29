@@ -6,40 +6,171 @@
         <item>Semua</item>
         <item>Fisika</item>
         <item>Biologi</item>
-        <item>Sejarah</item>
-        <item>Matematika Peminatan</item>
-        <item>Matematika</item>
-        <item>Geografi</item>
         <item>Kimia</item>
+        <item>Matematika</item>
+        <item>Matematika Peminatan</item>
+        <item>Bahasa</item>
         <item>Bahasa Indonesia</item>
         <item>Bahasa Inggris</item>
+        <item>Bahasa Arab</item>
+        <item>Bahasa Madura</item>
+        <item>Bahasa Mandarin</item>
+        <item>Sejarah</item>
         <item>Ekonomi</item>
+        <item>Geografi</item>
+        <item>Geologi</item>
+        <item>Meteorologi</item>
+        <item>Oceanografi</item>
+        <item>Astronomi</item>
         <item>Sosiologi</item>
-        <item>PKn</item>
-        <item>Teknologi</item>
-        <item>Kesenian</item>
+        <item>PKN</item>
+        <item>IPA</item>
+        <item>IPS</item>
         <item>Agama</item>
+        <item>Kesenian</item>
+        <item>Teknologi</item>
         <item>Olahraga</item>
         <item>Komik</item>
+        <item>Novel</item>
+        <item>Fantasi</item>
+        <item>Fiksi Ilmiah</item>
+        <item>Misteri</item>
+        <item>Thriller</item>
+        <item>Horor</item>
+        <item>Romantis</item>
+        <item>Fiksi Sejarah</item>
+        <item>Fiksi Remaja</item>
+        <item>Drama</item>
+        <item>Puisi</item>
+        <item>Cerpen</item>
+        <item>Biografi</item>
+        <item>Autobiografi</item>
+        <item>Memoar</item>
+        <item>Sejarah Dunia</item>
+        <item>Politik</item>
+        <item>Psikologi</item>
+        <item>Filsafat</item>
+        <item>Self Improvement</item>
+        <item>Bisnis</item>
+        <item>Manajemen</item>
+        <item>Hukum</item>
+        <item>Kedokteran</item>
+        <item>Komputer</item>
+        <item>Statistika</item>
+        <item>Pendidikan</item>
+        <item>Budaya</item>
+        <item>Seni &amp; Desain</item>
+        <item>Manga</item>
+        <item>Kamus</item>
+        <item>Ensiklopedia</item>
+        <item>Buku Anak</item>
+        <item>Buku Mewarnai</item>
+        <item>Buku Aktivitas</item>
+        <item>Buku Masak</item>
+        <item>Traveling</item>
+        <item>Fotografi</item>
+        <item>Parenting</item>
+        <item>Motivasi</item>
+        <item>Kerajinan Tangan</item>
+        <item>DIY</item>
+        <item>Majalah</item>
+        <item>Antropologi</item>
+        <item>Geografi Sosial</item>
+        <item>Kriminologi</item>
+        <item>Linguistik</item>
+        <item>Sastra</item>
+        <item>Etika</item>
+        <item>Estetika</item>
+        <item>Logika</item>
+        <item>Akuntansi</item>
+        <item>Pemasaran</item>
+        <item>Kewirausahaan</item>
+        <item>Tidak ada</item>
     </string-array>
 
     <string-array name="gambar">
-        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsU3x38HKF9Uf9Crb7LWcIbDc63iLo2akQA&amp;usqp=CAU</item> <!-- Fisika -->
-        <item>https://images.icon-icons.com/609/PNG/512/molecule_icon-icons.com_56341.png</item> <!-- Biologi -->
-        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYv4SVJbuiEcOjZD6WijLh_As6NuDYNe_Mw&amp;usqp=CAU</item> <!-- Sejarah -->
-        <item>https://c1.klipartz.com/pngpicture/359/623/sticker-png-history-icon-museum-icon-yellow-line.png</item> <!-- Matematika Peminatan -->
-        <item>https://img.lovepik.com/free-png/20211211/lovepik-mathematical-calculation-icon-free-vector-png-image_401496420_wh1200.png</item> <!-- Matematika -->
-        <item>https://pbs.twimg.com/profile_images/1091537124573114369/jzb1Wn3J_400x400.jpg</item> <!-- Geografi -->
-        <item>https://png.pngtree.com/png-clipart/20201225/ourlarge/pngtree-button-free-geographic-icon-shape-png-image_2609831.jpg</item> <!-- Kimia -->
-        <item>https://cdn-icons-png.flaticon.com/512/2907/2907967.png</item> <!-- Bahasa Indonesia -->
-        <item>https://cdn-icons-png.flaticon.com/512/4206/4206277.png</item> <!-- Bahasa Inggris -->
-        <item>https://cdn-icons-png.flaticon.com/512/3103/3103452.png</item> <!-- Ekonomi -->
-        <item>https://cdn-icons-png.flaticon.com/512/1675/1675931.png</item> <!-- Sosiologi -->
-        <item>https://cdn-icons-png.flaticon.com/512/3135/3135706.png</item> <!-- PKn -->
-        <item>https://cdn-icons-png.flaticon.com/512/4248/4248443.png</item> <!-- Teknologi -->
-        <item>https://cdn-icons-png.flaticon.com/512/1829/1829596.png</item> <!-- Kesenian -->
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKsU3x38HKF9Uf9Crb7LWcIbDc63iLo2akQA&amp;usqp=CAU</item> <!-- Semua -->
+        <item>https://cdn-icons-png.flaticon.com/512/4341/4341139.png</item> <!-- Fisika -->
+        <item>https://cdn-icons-png.flaticon.com/512/2933/2933921.png</item> <!-- Biologi -->
+        <item>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXYv4SVJbuiEcOjZD6WijLh_As6NuDYNe_Mw&amp;usqp=CAU</item> <!-- Kimia -->
+        <item>https://pbs.twimg.com/profile_images/1091537124573114369/jzb1Wn3J_400x400.jpg</item> <!-- Matematika -->
+        <item>https://img.lovepik.com/free-png/20211211/lovepik-mathematical-calculation-icon-free-vector-png-image_401496420_wh1200.png</item> <!-- Matematika Peminatan -->
+        <item>https://cdn-icons-png.flaticon.com/512/204/204074.png</item> <!-- Bahasa -->
+        <item>https://cdn-icons-png.flaticon.com/512/204/204074.png</item> <!-- Bahasa Indonesia -->
+        <item>https://cdn-icons-png.flaticon.com/512/197/197374.png</item> <!-- Bahasa Inggris -->
+        <item>https://cdn-icons-png.flaticon.com/512/197/197374.png</item> <!-- Bahasa Arab -->
+        <item>https://cdn-icons-png.flaticon.com/512/197/197374.png</item> <!-- Bahasa Madura -->
+        <item>https://cdn-icons-png.flaticon.com/512/197/197374.png</item> <!-- Bahasa Mandarin -->
+        <item>https://cdn-icons-png.flaticon.com/512/1040/1040201.png</item> <!-- Sejarah -->
+        <item>https://cdn-icons-png.flaticon.com/512/992/992700.png</item> <!-- Ekonomi -->
+        <item>https://cdn-icons-png.flaticon.com/512/992/992700.png</item> <!-- Geografi -->
+        <item>https://cdn-icons-png.flaticon.com/512/992/992700.png</item> <!-- Geologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/992/992700.png</item> <!-- Meteorologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/992/992700.png</item> <!-- Oceanografi -->
+        <item>https://cdn-icons-png.flaticon.com/512/992/992700.png</item> <!-- Astronomi -->
+        <item>https://cdn-icons-png.flaticon.com/512/3114/3114883.png</item> <!-- Sosiologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/2809/2809659.png</item> <!-- PKN -->
+        <item>https://cdn-icons-png.flaticon.com/512/2809/2809659.png</item> <!-- IPA -->
+        <item>https://cdn-icons-png.flaticon.com/512/2809/2809659.png</item> <!-- IPS -->
         <item>https://cdn-icons-png.flaticon.com/512/1998/1998610.png</item> <!-- Agama -->
-        <item>https://cdn-icons-png.flaticon.com/512/3004/3004667.png</item> <!-- Olahraga -->
+        <item>https://cdn-icons-png.flaticon.com/512/2721/2721304.png</item> <!-- Kesenian -->
+        <item>https://cdn-icons-png.flaticon.com/512/807/807292.png</item> <!-- Teknologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/3209/3209883.png</item> <!-- Olahraga -->
         <item>https://cdn-icons-png.flaticon.com/512/883/883746.png</item> <!-- Komik -->
+        <item>https://cdn-icons-png.flaticon.com/512/1450/1450331.png</item> <!-- Novel -->
+        <item>https://cdn-icons-png.flaticon.com/512/545/545682.png</item> <!-- Fantasi -->
+        <item>https://cdn-icons-png.flaticon.com/512/4149/4149675.png</item> <!-- Fiksi Ilmiah -->
+        <item>https://cdn-icons-png.flaticon.com/512/2920/2920084.png</item> <!-- Misteri -->
+        <item>https://cdn-icons-png.flaticon.com/512/3791/3791327.png</item> <!-- Thriller -->
+        <item>https://cdn-icons-png.flaticon.com/512/2099/2099073.png</item> <!-- Horor -->
+        <item>https://cdn-icons-png.flaticon.com/512/1011/1011863.png</item> <!-- Romantis -->
+        <item>https://cdn-icons-png.flaticon.com/512/435/435526.png</item> <!-- Fiksi Sejarah -->
+        <item>https://cdn-icons-png.flaticon.com/512/4211/4211811.png</item> <!-- Fiksi Remaja -->
+        <item>https://cdn-icons-png.flaticon.com/512/3829/3829732.png</item> <!-- Drama -->
+        <item>https://cdn-icons-png.flaticon.com/512/3965/3965941.png</item> <!-- Puisi -->
+        <item>https://cdn-icons-png.flaticon.com/512/953/953796.png</item> <!-- Cerpen -->
+        <item>https://cdn-icons-png.flaticon.com/512/929/929426.png</item> <!-- Biografi -->
+        <item>https://cdn-icons-png.flaticon.com/512/1995/1995545.png</item> <!-- Autobiografi -->
+        <item>https://cdn-icons-png.flaticon.com/512/1100/1100997.png</item> <!-- Memoar -->
+        <item>https://cdn-icons-png.flaticon.com/512/2883/2883820.png</item> <!-- Sejarah Dunia -->
+        <item>https://cdn-icons-png.flaticon.com/512/684/684908.png</item> <!-- Politik -->
+        <item>https://cdn-icons-png.flaticon.com/512/3163/3163130.png</item> <!-- Psikologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/3079/3079161.png</item> <!-- Filsafat -->
+        <item>https://cdn-icons-png.flaticon.com/512/3135/3135789.png</item> <!-- Self Improvement -->
+        <item>https://cdn-icons-png.flaticon.com/512/3135/3135706.png</item> <!-- Bisnis -->
+        <item>https://cdn-icons-png.flaticon.com/512/4306/4306604.png</item> <!-- Manajemen -->
+        <item>https://cdn-icons-png.flaticon.com/512/3003/3003984.png</item> <!-- Hukum -->
+        <item>https://cdn-icons-png.flaticon.com/512/3209/3209883.png</item> <!-- Kedokteran -->
+        <item>https://cdn-icons-png.flaticon.com/512/2721/2721304.png</item> <!-- Komputer -->
+        <item>https://cdn-icons-png.flaticon.com/512/4181/4181396.png</item> <!-- Statistika -->
+        <item>https://cdn-icons-png.flaticon.com/512/2618/2618640.png</item> <!-- Pendidikan -->
+        <item>https://cdn-icons-png.flaticon.com/512/2618/2618640.png</item> <!-- Budaya -->
+        <item>https://cdn-icons-png.flaticon.com/512/1157/1157030.png</item> <!-- Seni & Desain -->
+        <item>https://cdn-icons-png.flaticon.com/512/5968/5968896.png</item> <!-- Manga -->
+        <item>https://cdn-icons-png.flaticon.com/512/3176/3176363.png</item> <!-- Kamus -->
+        <item>https://cdn-icons-png.flaticon.com/512/3159/3159050.png</item> <!-- Ensiklopedia -->
+        <item>https://chat.openai.com/share/static/file-2LF61n5TQ26pwyBz6BpNvv.png</item> <!-- Buku Anak -->
+        <item>https://cdn-icons-png.flaticon.com/512/1295/1295418.png</item> <!-- Buku Mewarnai -->
+        <item>https://cdn-icons-png.flaticon.com/512/4191/4191096.png</item> <!-- Buku Aktivitas -->
+        <item>https://cdn-icons-png.flaticon.com/512/590/590685.png</item> <!-- Buku Masak -->
+        <item>https://cdn-icons-png.flaticon.com/512/1033/1033922.png</item> <!-- Traveling -->
+        <item>https://cdn-icons-png.flaticon.com/512/883/883746.png</item> <!-- Fotografi -->
+        <item>https://cdn-icons-png.flaticon.com/512/3062/3062634.png</item> <!-- Parenting -->
+        <item>https://cdn-icons-png.flaticon.com/512/1198/1198366.png</item> <!-- Motivasi -->
+        <item>https://cdn-icons-png.flaticon.com/512/2345/2345331.png</item> <!-- Kerajinan Tangan -->
+        <item>https://cdn-icons-png.flaticon.com/512/2406/2406540.png</item> <!-- DIY -->
+        <item>https://cdn-icons-png.flaticon.com/512/2717/2717519.png</item> <!-- Majalah -->
+        <item>https://cdn-icons-png.flaticon.com/512/4108/4108940.png</item> <!-- Antropologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/4087/4087812.png</item> <!-- Geografi Sosial -->
+        <item>https://cdn-icons-png.flaticon.com/512/3600/3600866.png</item> <!-- Kriminologi -->
+        <item>https://cdn-icons-png.flaticon.com/512/3050/3050332.png</item> <!-- Linguistik -->
+        <item>https://cdn-icons-png.flaticon.com/512/3595/3595455.png</item> <!-- Sastra -->
+        <item>https://cdn-icons-png.flaticon.com/512/3557/3557936.png</item> <!-- Etika -->
+        <item>https://cdn-icons-png.flaticon.com/512/3771/3771393.png</item> <!-- Estetika -->
+        <item>https://cdn-icons-png.flaticon.com/512/3192/3192746.png</item> <!-- Logika -->
+        <item>https://cdn-icons-png.flaticon.com/512/2331/2331966.png</item> <!-- Akuntansi -->
+        <item>https://cdn-icons-png.flaticon.com/512/4149/4149634.png</item> <!-- Pemasaran -->
+        <item>https://cdn-icons-png.flaticon.com/512/4341/4341134.png</item> <!-- Kewirausahaan -->
+        <item>https://cdn-icons-png.flaticon.com/512/4181/4181396.png</item> <!-- Tidak ada -->
     </string-array>
 </resources>
