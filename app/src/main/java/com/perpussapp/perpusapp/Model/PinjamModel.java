@@ -2,14 +2,22 @@ package com.perpussapp.perpusapp.Model;
 
 public class PinjamModel {
     private String key, nis;
-    private long tanggal, tglBatas ;
+    private long tanggal, tglBatas;
+
+    // Tambahan untuk filter pencarian
+    private String namaUser;
+    private String nisUser;
+
+    // Tambahan untuk pencarian berdasarkan nama langsung
+    private String nama;
 
     public PinjamModel() {
     }
 
-    public PinjamModel(String key, String nis, long tanggal, long tglBatas) {
+    public PinjamModel(String key, String nis, String nama, long tanggal, long tglBatas) {
         this.key = key;
         this.nis = nis;
+        this.nama = nama;
         this.tanggal = tanggal;
         this.tglBatas = tglBatas;
     }
@@ -44,5 +52,30 @@ public class PinjamModel {
 
     public void setTglBatas(long tglBatas) {
         this.tglBatas = tglBatas;
+    }
+
+    public String getNamaUser() {
+        return namaUser;
+    }
+
+    public void setNamaUser(String namaUser) {
+        this.namaUser = namaUser;
+    }
+
+    public String getNisUser() {
+        return nisUser;
+    }
+
+    public void setNisUser(String nisUser) {
+        this.nisUser = nisUser;
+    }
+
+    // Getter dan setter untuk nama (penting untuk pencarian/filter)
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 }

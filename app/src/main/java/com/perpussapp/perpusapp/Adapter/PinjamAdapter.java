@@ -57,13 +57,15 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence charSequence) {
-                String charString = charSequence.toString();
+                String charString = charSequence.toString().toLowerCase().trim();
                 if (charString.isEmpty()) {
                     pinjamModels = dataListfull;
                 } else {
                     List<PinjamModel> filteredList = new ArrayList<>();
                     for (PinjamModel row : dataListfull) {
-                        if (constant.changeFromLong(row.getTanggal()).startsWith(charString)) {
+                        if ((row.getNama() != null && row.getNama().toLowerCase().contains(charString)) ||
+                                (row.getNis() != null && row.getNis().toLowerCase().contains(charString)) ||
+                                constant.changeFromLong(row.getTanggal()).contains(charString)) {
                             filteredList.add(row);
                         }
                     }
@@ -192,6 +194,7 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         }
     }
 
+
     private void formKembalikan(PinjamModel pinjamModel) {
         mDatabase.child("listKembali")
                 .child(pinjamModel.getKey())
@@ -263,7 +266,9 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        holder.txtNama.setText("Nama : " + snapshot.child("nama").getValue(String.class));
+                        String nama = snapshot.child("nama").getValue(String.class);
+                        pinjamModel.setNama(nama);
+                        holder.txtNama.setText("Nama : " + nama);
                         Glide.with(context).load(snapshot.child("image").getValue(String.class)).into(holder.circleImageView);
                     }
 
