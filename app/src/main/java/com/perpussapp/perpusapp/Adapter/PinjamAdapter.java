@@ -295,6 +295,10 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
                 });
     }
 
+    public PinjamModel getFilteredItem(int position) {
+        return pinjamModels.get(position);
+    }
+
     @Override
     public int getItemCount() {
         return pinjamModels.size();

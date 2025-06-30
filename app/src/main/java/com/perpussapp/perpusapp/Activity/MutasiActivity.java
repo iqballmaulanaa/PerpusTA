@@ -65,7 +65,7 @@ public class MutasiActivity extends BaseActivity {
                         intent = new Intent(MutasiActivity.this, ConfirmationActivity.class);
                     }
                     intent.putExtra("isEdit", true);
-                    intent.putExtra("pinjamKey", pinjamModels.get(position).getKey());
+                    intent.putExtra("pinjamKey", pinjamAdapter.getFilteredItem(position).getKey());
                     intent.putParcelableArrayListExtra("listUser", getIntent().getParcelableArrayListExtra("listUser"));
                     intent.putParcelableArrayListExtra("listBuku", getIntent().getParcelableArrayListExtra("listBuku"));
                     startActivity(intent);
