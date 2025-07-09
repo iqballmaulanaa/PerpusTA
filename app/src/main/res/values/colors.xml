@@ -11,9 +11,24 @@
     <color name="bg_pucat">#DADADA</color>
     <color name="grey">#FFF5F5F5</color>
     <color name="timeAgo">#CACACA</color>
-
+    <color name="green">#4CAF50</color>
+    <color name="orange">#FF9800</color>
     <color name="jrspinner_color_line">#E0E0E0</color>
     <color name="jrspinner_color_default">#99000000</color>
     <color name="jrspinner_black_transparent">#80000000</color>
-    <color name="red">#F44336</color>
+   <color name="red">#F44336</color>
+    <color name="red_dark">#D32F2F</color>
+    <color name="main_green_color">#4CAF50</color> <!-- Hijau seperti tombol konfirmasi -->
+    <color name="red_btn_bg_color">#F44336</color> <!-- Merah untuk status "Belum di Kembalikan" -->
+    <color name="colorPrimary">#6200EE</color>
+    <color name="yellow">#FFC107</color>
+    <color name="colorOrange">#FFA726</color> <!-- Atau warna oranye lainnya -->
+    <color name="yellow_warning">#FFA500</color>
+    <color name="green_success">#4CAF50</color> <!-- Green 500 -->
+    <color name="red_error">#F44336</color>     <!-- Red 500 -->
+    <!-- Status Colors -->
+    <color name="status_waiting">#FFC107</color>  <!-- Amber 500 -->
+    <color name="status_success">#4CAF50</color> <!-- Green 500 -->
+    <color name="status_error">#F44336</color>   <!-- Red 500 -->
+    <color name="yellow_btn_bg_color">#FFEB3B</color> <!-- Warna kuning terang -->
 </resources>
