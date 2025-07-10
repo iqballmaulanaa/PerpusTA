@@ -119,6 +119,24 @@
                     android:textColor="@color/purple_500"
                     style="@style/TextAppearance.AppCompat.Body1"/>
             </TableRow>
+
+            <!-- Denda -->
+            <TableRow>
+                <TextView
+                    android:text="Denda"
+                    android:textColor="@android:color/holo_red_dark"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
+                    android:text=" : "
+                    android:textColor="@android:color/holo_red_dark"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+                <TextView
+                    android:id="@+id/txtDenda"
+                    android:text="Rp0"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    style="@style/TextAppearance.AppCompat.Body1"/>
+            </TableRow>
         </TableLayout>
 
         <TextView

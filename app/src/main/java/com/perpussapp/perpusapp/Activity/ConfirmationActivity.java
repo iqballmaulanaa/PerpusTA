@@ -43,7 +43,7 @@ public class ConfirmationActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private Toolbar toolbar;
     private DatabaseReference mDatabase;
-    private TextView txtTanggal, txtNis, txtNama, txtKembali, txtSim, txtBatas;
+    private TextView txtTanggal, txtNis, txtNama, txtKembali, txtSim, txtBatas, txtDenda;
     private CardView c;
     private Button btnKembalikan;
     private String pinjamKey;
@@ -86,6 +86,7 @@ public class ConfirmationActivity extends BaseActivity {
         txtNama = findViewById(R.id.txtNama);
         txtNis = findViewById(R.id.txtNis);
         txtTanggal = findViewById(R.id.txtTanggal);
+        txtDenda = findViewById(R.id.txtDenda);
         btnKembalikan = findViewById(R.id.btnKembalikanSiswa);
         btnKembalikan.setVisibility(View.GONE);
     }
@@ -202,6 +203,27 @@ public class ConfirmationActivity extends BaseActivity {
                 txtKembali.setText(constant.changeFromLong(tanggalKembali));
                 findViewById(R.id.tbRow).setVisibility(View.VISIBLE);
                 txtKembali.setVisibility(View.VISIBLE);
+
+                // Hitung dan tampilkan denda
+                mDatabase.child("listPinjam").child(pinjamKey).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Long batas = dataSnapshot.child("tglBatas").getValue(Long.class);
+                        if (batas != null) {
+                            long selisih = (tanggalKembali - batas) / (1000 * 60 * 60 * 24);
+                            if (selisih > 0) {
+                                long denda = selisih * 1000;
+                                txtDenda.setText("Denda: Rp" + denda);
+                                txtDenda.setVisibility(View.VISIBLE);
+                            } else {
+                                txtDenda.setVisibility(View.GONE);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {}
+                });
             }
         } else {
             txtSim.setBackgroundColor(ContextCompat.getColor(
@@ -209,6 +231,7 @@ public class ConfirmationActivity extends BaseActivity {
             txtSim.setText("Kembalikan Buku");
             findViewById(R.id.tbRow).setVisibility(View.GONE);
             txtKembali.setVisibility(View.GONE);
+            txtDenda.setVisibility(View.GONE);
 
             if (constant.getLevel(this) == 1) {
                 txtSim.setOnClickListener(v -> formInput());

@@ -3,6 +3,7 @@ package com.perpussapp.perpusapp.Model;
 public class PinjamModel {
     private String key, nis;
     private long tanggal, tglBatas;
+    private long denda; // ✅ Tambahan: denda
 
     // Tambahan untuk filter pencarian
     private String namaUser;
@@ -77,5 +78,14 @@ public class PinjamModel {
 
     public void setNama(String nama) {
         this.nama = nama;
+    }
+
+    // ✅ Getter dan setter untuk denda
+    public long getDenda() {
+        return denda;
+    }
+
+    public void setDenda(long denda) {
+        this.denda = denda;
     }
 }

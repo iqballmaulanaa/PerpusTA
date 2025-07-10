@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
@@ -43,6 +42,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder> implements Filterable {
 
+    private static final int BATAS_PEMINJAMAN_HARI = 7;
+    private static final int DENDA_PER_HARI = 1000;
+
     private List<PinjamModel> pinjamModels;
     private List<PinjamModel> dataListfull = new ArrayList<>();
     private Context context;
@@ -64,6 +66,14 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         this.dataListfull = pinjamModels;
         this.mDatabase = FirebaseDatabase.getInstance().getReference();
         this.constant = new Constant(context);
+    }
+
+    // Make this method public to access from activities
+    public PinjamModel getFilteredItem(int position) {
+        if (position >= 0 && position < pinjamModels.size()) {
+            return pinjamModels.get(position);
+        }
+        return null;
     }
 
     @Override
@@ -112,9 +122,8 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         PopupMenu pop = new PopupMenu(context, holder.imgMore);
         pop.inflate(R.menu.menu_item);
 
-        holder.btnKembalikanSiswa.setVisibility(View.GONE);
         getUserInfo(pinjamModel, holder);
-        holder.txtTanggal.setText("Tanggal : " + constant.changeFromLong(pinjamModel.getTanggal()));
+        holder.txtTanggal.setText("Tanggal Pinjam: " + constant.changeFromLong(pinjamModel.getTanggal()));
 
         checkReturnStatus(pinjamModel, holder, pop, position);
 
@@ -137,6 +146,26 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         });
 
         setupUserLevelUI(holder);
+    }
+
+    private long hitungDenda(PinjamModel pinjamModel, DataSnapshot returnSnapshot) {
+        if (returnSnapshot == null || !returnSnapshot.hasChild("tanggalKembali")) {
+            return 0; // Belum dikembalikan
+        }
+
+        Long tanggalKembali = returnSnapshot.child("tanggalKembali").getValue(Long.class);
+        if (tanggalKembali == null) {
+            return 0;
+        }
+
+        long batasTanggal = pinjamModel.getTglBatas(); // gunakan batas waktu pinjam
+        long selisihHari = (tanggalKembali - batasTanggal) / (1000 * 60 * 60 * 24);
+        if (selisihHari <= 0) {
+            return 0; // Tidak terlambat
+        }
+
+        return selisihHari * DENDA_PER_HARI; // Denda dihitung berdasarkan hari keterlambatan
+
     }
 
     private void refreshData() {
@@ -163,53 +192,48 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         });
     }
 
-    public PinjamModel getFilteredItem(int position) {
-        if (position >= 0 && position < pinjamModels.size()) {
-            return pinjamModels.get(position);
-        }
-        return null;
-    }
-
     private void checkReturnStatus(PinjamModel pinjamModel, ViewHolder holder, PopupMenu pop, int position) {
         mDatabase.child("listKembali").child(pinjamModel.getKey()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                long denda = hitungDenda(pinjamModel, snapshot);
+                pinjamModel.setDenda(denda);
+
+                if (denda > 0) {
+                    holder.txtDenda.setText("Denda: Rp" + denda);
+                    holder.txtDenda.setVisibility(View.VISIBLE);
+                } else {
+                    holder.txtDenda.setVisibility(View.GONE);
+                }
+
                 if (snapshot.exists()) {
                     String status = snapshot.child("status").getValue(String.class);
                     if (status != null) {
                         switch (status) {
                             case "sudah_dikembalikan":
-                                holder.txtStatus.setText("Sudah di Kembalikan");
+                                holder.txtStatus.setText("Sudah dikembalikan");
                                 holder.txtStatus.setBackgroundColor(context.getResources().getColor(android.R.color.holo_green_dark));
-                                pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Belum di Kembalikan");
+                                pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Belum dikembalikan");
                                 break;
                             case "menunggu_konfirmasi":
-                                holder.txtStatus.setText("Menunggu Konfirmasi");
+                                holder.txtStatus.setText("Menunggu konfirmasi");
                                 holder.txtStatus.setBackgroundColor(context.getResources().getColor(android.R.color.holo_orange_light));
-                                pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Sudah di Kembalikan");
+                                pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Sudah dikembalikan");
                                 if (constant.getLevel(context) == 1) {
                                     holder.txtStatus.setOnClickListener(v -> showConfirmationDialog(pinjamModel));
                                 }
                                 break;
                             case "ditolak":
-                                holder.txtStatus.setText("Pengembalian Ditolak");
+                                holder.txtStatus.setText("Pengembalian ditolak");
                                 holder.txtStatus.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_light));
-                                pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Sudah di Kembalikan");
-                                if (constant.getLevel(context) != 1) {
-                                    holder.btnKembalikanSiswa.setVisibility(View.VISIBLE);
-                                    holder.btnKembalikanSiswa.setOnClickListener(v -> showReturnForm(pinjamModel, snapshot));
-                                }
+                                pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Sudah dikembalikan");
                                 break;
                         }
                     }
                 } else {
-                    holder.txtStatus.setText("Belum di Kembalikan");
+                    holder.txtStatus.setText("Belum dikembalikan");
                     holder.txtStatus.setBackgroundColor(context.getResources().getColor(android.R.color.holo_red_dark));
-                    pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Sudah di Kembalikan");
-                    if (constant.getLevel(context) != 1) {
-                        holder.btnKembalikanSiswa.setVisibility(View.VISIBLE);
-                        holder.btnKembalikanSiswa.setOnClickListener(v -> showReturnForm(pinjamModel, null));
-                    }
+                    pop.getMenu().findItem(R.id.kembalikan).setVisible(true).setTitle("Sudah dikembalikan");
                 }
             }
 
@@ -224,7 +248,6 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         if (constant.getLevel(context) == 1) {
             holder.circleImageView.setVisibility(View.VISIBLE);
             holder.imgMore.setVisibility(View.VISIBLE);
-            holder.btnKembalikanSiswa.setVisibility(View.GONE);
         } else {
             holder.circleImageView.setVisibility(View.GONE);
             holder.imgMore.setVisibility(View.GONE);
@@ -322,7 +345,17 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
         builder.setTitle("Pengembalian Buku");
         builder.setView(view);
 
+        TextView txtInfoDenda = view.findViewById(R.id.txtInfoDenda);
         TextInputEditText edtTanggalKembali = view.findViewById(R.id.edtTanggalKembali);
+
+        // Hitung denda saat ini
+        long denda = hitungDenda(pinjamModel, existingReturn);
+        if (denda > 0) {
+            txtInfoDenda.setText("Denda yang harus dibayar: Rp" + denda);
+        } else {
+            txtInfoDenda.setText("Tidak ada denda");
+        }
+
         if (existingReturn != null && existingReturn.hasChild("tanggalKembali")) {
             Long dateMillis = existingReturn.child("tanggalKembali").getValue(Long.class);
             if (dateMillis != null) {
@@ -342,6 +375,14 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
                         Calendar newDate = Calendar.getInstance();
                         newDate.set(year, month, dayOfMonth);
                         edtTanggalKembali.setText(constant.changeFromDate(newDate.getTime()));
+
+                        // Update denda saat tanggal berubah
+                        long newReturnDate = newDate.getTimeInMillis();
+                        long selisihHari = (newReturnDate - pinjamModel.getTanggal()) / (1000 * 60 * 60 * 24);
+                        long newDenda = selisihHari > BATAS_PEMINJAMAN_HARI ?
+                                (selisihHari - BATAS_PEMINJAMAN_HARI) * DENDA_PER_HARI : 0;
+                        txtInfoDenda.setText(newDenda > 0 ?
+                                "Denda yang harus dibayar: Rp" + newDenda : "Tidak ada denda");
                     },
                     calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH),
@@ -362,19 +403,26 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
             Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
             positiveButton.setOnClickListener(v -> {
                 if (edtTanggalKembali.length() == 0) {
-                    edtTanggalKembali.setError("Tanggal Masih Kosong");
+                    edtTanggalKembali.setError("Tanggal masih kosong");
                     return;
                 }
 
+                // Hitung denda final
+                long tanggalKembali = constant.changeYyyyMMDDtoMili(edtTanggalKembali.getText().toString().trim() + " 00:00:00");
+                long selisihHari = (tanggalKembali - pinjamModel.getTanggal()) / (1000 * 60 * 60 * 24);
+                long dendaFinal = selisihHari > BATAS_PEMINJAMAN_HARI ?
+                        (selisihHari - BATAS_PEMINJAMAN_HARI) * DENDA_PER_HARI : 0;
+
                 Map<String, Object> returnData = new HashMap<>();
-                returnData.put("tanggalKembali", constant.changeYyyyMMDDtoMili(edtTanggalKembali.getText().toString().trim() + " 00:00:00"));
+                returnData.put("tanggalKembali", tanggalKembali);
                 returnData.put("status", constant.getLevel(context) == 1 ? "sudah_dikembalikan" : "menunggu_konfirmasi");
+                returnData.put("denda", dendaFinal);
 
                 mDatabase.child("listKembali").child(pinjamModel.getKey())
                         .updateChildren(returnData)
                         .addOnSuccessListener(aVoid -> {
                             dialog.dismiss();
-                            Toast.makeText(context, "berhasil menyimpan", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Berhasil menyimpan", Toast.LENGTH_SHORT).show();
                             refreshData();
                         });
             });
@@ -385,23 +433,23 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
     private void showDeleteReturnConfirmation(PinjamModel pinjamModel) {
         new AlertDialog.Builder(context)
                 .setTitle("Konfirmasi")
-                .setMessage("Apakah Kamu Yakin Akan Menghapus Dari Daftar Pengembalian Buku?")
-                .setPositiveButton("Iya", (dialog, which) -> {
+                .setMessage("Apakah Anda yakin akan menghapus dari daftar pengembalian buku?")
+                .setPositiveButton("Ya", (dialog, which) -> {
                     mDatabase.child("listKembali").child(pinjamModel.getKey())
                             .removeValue().addOnSuccessListener(aVoid -> {
-                                Toast.makeText(context, "berhasil menghapus", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Berhasil menghapus", Toast.LENGTH_SHORT).show();
                                 refreshData();
                             });
                 })
-                .setNegativeButton(android.R.string.cancel, null)
+                .setNegativeButton("Batal", null)
                 .show();
     }
 
     private void showDeleteConfirmation(PinjamModel pinjamModel, int position) {
         new AlertDialog.Builder(context)
                 .setTitle("Konfirmasi")
-                .setMessage("Apakah Kamu Yakin Akan Menghapus")
-                .setPositiveButton("Iya", (dialog, which) -> {
+                .setMessage("Apakah Anda yakin akan menghapus?")
+                .setPositiveButton("Ya", (dialog, which) -> {
                     SweetAlertDialog pDialog = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
                     pDialog.getProgressHelper().setBarColor(context.getResources().getColor(R.color.purple_200));
                     pDialog.setTitleText("Loading");
@@ -412,12 +460,12 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
                         mDatabase.child("listBookPinjam").child(pinjamModel.getKey()).removeValue();
                         pinjamModels.remove(position);
                         notifyDataSetChanged();
-                        Toast.makeText(context, "berhasil menghapus", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Berhasil menghapus", Toast.LENGTH_SHORT).show();
                         pDialog.dismissWithAnimation();
                         refreshData();
                     });
                 })
-                .setNegativeButton(android.R.string.cancel, null)
+                .setNegativeButton("Batal", null)
                 .show();
     }
 
@@ -428,7 +476,7 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String nama = snapshot.child("nama").getValue(String.class);
                         pinjamModel.setNama(nama);
-                        holder.txtNama.setText("Nama : " + nama);
+                        holder.txtNama.setText("Nama: " + nama);
                         Glide.with(context).load(snapshot.child("image").getValue(String.class)).into(holder.circleImageView);
                     }
 
@@ -445,7 +493,7 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
                             ListBukuModel l = dataSnapshot.getValue(ListBukuModel.class);
                             if (l != null) tot += l.getJumlah();
                         }
-                        holder.txtJumlah.setText("Jumlah Pinjam : " + tot);
+                        holder.txtJumlah.setText("Jumlah Pinjam: " + tot);
                     }
 
                     @Override
@@ -460,21 +508,20 @@ public class PinjamAdapter extends RecyclerView.Adapter<PinjamAdapter.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         CircleImageView circleImageView;
-        TextView txtNama, txtJumlah, txtTanggal, txtStatus;
+        TextView txtNama, txtJumlah, txtTanggal, txtStatus, txtDenda;
         ImageButton imgMore;
         RelativeLayout parentRelative;
-        Button btnKembalikanSiswa;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             parentRelative = itemView.findViewById(R.id.parentRelative);
             txtStatus = itemView.findViewById(R.id.txtStatus);
+            txtDenda = itemView.findViewById(R.id.txtDenda);
             imgMore = itemView.findViewById(R.id.imgMore);
             txtNama = itemView.findViewById(R.id.txtNama);
             txtJumlah = itemView.findViewById(R.id.txtJumlah);
             circleImageView = itemView.findViewById(R.id.circleImageView);
             txtTanggal = itemView.findViewById(R.id.txtTanggal);
-            btnKembalikanSiswa = itemView.findViewById(R.id.btnKembalikanSiswa);
         }
     }
 }
